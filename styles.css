@@ -1,0 +1,16 @@
+body {
+    background: url("images/background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+#playerOne {
+    position: absolute;
+    left: 0;
+    bottom: 10vh;
+}
+#playerTwo {
+    position: absolute;
+    left: 0;
+    bottom: 10vh;
+}
