@@ -48,3 +48,6 @@ Other general stuff-------------------------------
      transition: left .5s;
      transform: scaleX(-1);
  }
+
+
+ https://codepen.io/sdras/pen/pRWxGg
