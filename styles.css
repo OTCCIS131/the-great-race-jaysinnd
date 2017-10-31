@@ -13,14 +13,14 @@ body {
     position: absolute;
     left: 0;
     bottom: 10vh;
+    transition: left .5s;  
 }
 #vs-button {
     position: absolute;
     left: 42%;
 }
-#theflash {
-
-}
-#reverseflash {
-    
+.winner {
+    bottom: 20vh;
+    left: 40vw !important;
+    width: 30vw !important;   
 }
