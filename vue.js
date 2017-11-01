@@ -2,15 +2,21 @@ $(function() {
     var go = new Vue({
         el: '#app',
         data: {
+            //
             racing: false,
             winner: null,
             theflash: 0,
             reverseflash: 0,
             tick: 0,
             interval: null
+
+
+            //not sure what goes here. I think i am missing something?
         },
+        
         computed: {
             winning() {
+                
                 if (this.theflash == this.reverseflash) return null
                     return this.theflash > this.reverseflash ? 'theflash' : 'reverseflash'
             },
@@ -20,6 +26,7 @@ $(function() {
                 }
             },
             flashClass() {
+                //will make this player do 'something' if it wins
                 if (!this.winner) return
                 return this.winner == 'theflash' ? 'animated flash infinite winner' : 'animated wobble'
             },
@@ -29,9 +36,12 @@ $(function() {
                 }
             },
             reverseClass() {
+                //will make this player do'something' if it wins
                 if (!this.winner) return
                 return this.winner == 'reverseflash' ? 'animated flash infinite winner' : 'animated wobble'
             }
+            //TODO: stil have the winner sitting behind the button.
+            //need to figure out how to change that or move the button on a win
         },
         methods: {
             race() {
@@ -45,6 +55,7 @@ $(function() {
 
                 }, 50)
             },
+            //all the math(random)stuffs
             progressPlayers() {
                 this.tick++
                 this.theflash += (Math.random() >= Math.random()) ? 1 : 0
@@ -66,6 +77,8 @@ $(function() {
                 this.racing = false
                 this.winner = player
             },
+            //click on the VS image - resets the race. 
+            //clicking again, restarts a new race
             restart() {
                 this.racing = false
                 this.winner = null
